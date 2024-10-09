@@ -3,13 +3,15 @@ name: release
 on:
   push:
     branches:
-      - main
+      - gh-pages
     paths:
         - 'charts/**'
   workflow_dispatch: { }
 
 jobs:
   release:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -28,4 +30,4 @@ jobs:
             skip_existing: true
             packages_with_index: true
         env:
-          AUTH_TOKEN: "${{ secrets.GIT_PUB_AUTH_TOKEN }}"
+          CR_TOKEN: "${{ secrets.GIT_PUB_AUTH_TOKEN }}"
