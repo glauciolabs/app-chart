@@ -1,2 +1,1 @@
-# app-chart
-App chart
+## This is a generic helm chart repository.
