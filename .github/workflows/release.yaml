@@ -30,8 +30,6 @@ jobs:
         with:
           application_id: ${{ secrets.GIT_APP_ID }}
           application_private_key: ${{ secrets.GIT_APP_KEY }}
-          permissions: "actions:write"
-  
 
       - name: run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
